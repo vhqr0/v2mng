@@ -85,6 +85,8 @@ def vmess_parse(url: str) -> tuple[str, dict[str, Any]]:
                     ws_settings["headers"] = {"Host": d.host}
                 if ws_settings:
                     stream_settings["wsSettings"] = ws_settings
+            case "tcp":
+                pass
             case _:
                 raise RuntimeError("invalid net", d.net)
 
